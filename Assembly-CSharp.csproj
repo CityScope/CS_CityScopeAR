@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B65CB1AA-C0B6-E635-73F1-0D094FC49A63}</ProjectGuid>
+    <ProjectGuid>{65B3FF54-9286-38C9-28A0-3B92F03D10A6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -48,17 +48,12 @@
   <ItemGroup>
      <Compile Include="Assets\Google-Unity\Scripts\AndroidHelper.cs" />
      <Compile Include="Assets\Google-Unity\Scripts\AndroidLifecycle.cs" />
-     <Compile Include="Assets\Resources\Materials\Heatmap\HeatMapMesh.cs" />
-     <Compile Include="Assets\Resources\Materials\TargetPopulationGradientMaterial\TargetPopulationGradient.cs" />
-     <Compile Include="Assets\Resources\Scale4Tango.cs" />
-     <Compile Include="Assets\Resources\scripts\Agents\AgentsController.cs" />
-     <Compile Include="Assets\Resources\scripts\Agents\SpawnersController.cs" />
-     <Compile Include="Assets\Resources\scripts\Agents\TargetController.cs" />
-     <Compile Include="Assets\Resources\scripts\Agents\TargetsManager.cs" />
      <Compile Include="Assets\Resources\scripts\CityIO\cityIO.cs" />
      <Compile Include="Assets\Resources\scripts\Helpers\ResetScene.cs" />
+     <Compile Include="Assets\Resources\scripts\Helpers\Scale4Tango.cs" />
      <Compile Include="Assets\Resources\scripts\Helpers\cameraControl.cs" />
      <Compile Include="Assets\Resources\scripts\Helpers\stateManager.cs" />
+     <Compile Include="Assets\Resources\scripts\ScaleRotScene.cs" />
      <Compile Include="Assets\TangoPrefabs\Deprecated\TangoARPoseController.cs" />
      <Compile Include="Assets\TangoPrefabs\Deprecated\TangoDeltaPoseController.cs" />
      <Compile Include="Assets\TangoPrefabs\Scripts\ARCameraPostProcess.cs" />
@@ -156,7 +151,6 @@
      <None Include="Assets\TangoPrefabs\Shaders\YUV2RGB.shader" />
      <None Include="Assets\TangoSDK\Core\Shaders\RGB2YUV_CbCr.shader" />
      <None Include="Assets\TangoPrefabs\Shaders\ARPostProcess.shader" />
-     <None Include="Assets\Resources\Materials\TargetPopulationGradientMaterial\TargetPopulationGradient.shader" />
      <None Include="Assets\TangoSDK\Examples\ExperimentalMeshBuilderWithPhysics\Shader\UnlitColor.shader" />
      <None Include="Assets\TangoPrefabs\Shaders\TangoEnvironmentalLighting\EnvironmentalLightingSpecularBumped.shader" />
      <None Include="Assets\TangoPrefabs\Shaders\TangoEnvironmentalLighting\TangoEnvironmentalLighting.cginc" />
@@ -164,7 +158,6 @@
      <None Include="Assets\TangoSDK\Core\Shaders\RGB2YUV_Y.shader" />
      <None Include="Assets\TangoSDK\Examples\ExperimentalMeshOcclusion\Shaders\OcclusionMesh.shader" />
      <None Include="Assets\TangoSDK\Examples\ExperimentalMeshBuilderWithColor\Shaders\UnlitVertexColor.shader" />
-     <None Include="Assets\Resources\Materials\Heatmap\HeightDependentShader.shader" />
      <None Include="Assets\TangoSDK\Examples\ExperimentalMeshOcclusion\Shaders\OcclusionMask.shader" />
      <None Include="Assets\TangoSDK\Core\Shaders\ColorCameraEmulation.shader" />
      <None Include="Assets\TangoPrefabs\Shaders\PointCloud_Occlusion.shader" />

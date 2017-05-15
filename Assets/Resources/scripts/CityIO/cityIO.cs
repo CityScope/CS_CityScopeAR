@@ -142,13 +142,15 @@ public class cityIO : MonoBehaviour
 
 					if (n == 6) { //Street -- Should be fixed in JSON formatting 
 						_cube.transform.localScale = new Vector3 (cellShrink * cellWorldSize, 0, cellShrink * cellWorldSize);
+						_cube.transform.localPosition = new Vector3 ((_Cells.grid [i].x * cellWorldSize), 0, (_Cells.grid [i].y * cellWorldSize)); //compensate for scale shift due to height
+
 						var _tmpColor = Color.gray; 
 						_tmpColor.a = 0.75f; 
 						_cube.GetComponent<Renderer> ().material.color = _tmpColor;
 
 					} else if (_Cells.grid [i].type > -1 && _Cells.grid [i].type < 6) { //if this cell is one of the buildings types
 						_cube.transform.localScale = new Vector3 (cellShrink * cellWorldSize, (_Cells.objects.density [n] * floorHeight), cellShrink * cellWorldSize);
-						_cube.transform.position = new Vector3 (_cube.transform.position.x, (_Cells.objects.density [n] * floorHeight) / 2, _cube.transform.position.z); //compensate for scale shift and x,y array
+						_cube.transform.localPosition = new Vector3 (_cube.transform.position.x, (_Cells.objects.density [n] * floorHeight) / 2, _cube.transform.position.z); //compensate for scale shift and x,y array
 						_cube.AddComponent<NavMeshObstacle> ();
 						_cube.GetComponent<NavMeshObstacle> ().carving = true; 
 	
@@ -159,7 +161,7 @@ public class cityIO : MonoBehaviour
 
 
 					} else { //if green or other non building 
-						_cube.transform.position = new Vector3 (_cube.transform.position.x, -5, _cube.transform.position.z); //hide base plates 
+						_cube.transform.localPosition = new Vector3 (_cube.transform.position.x, -5, _cube.transform.position.z); //hide base plates 
 						_cube.transform.localScale = new Vector3 (cellShrink * cellWorldSize, 0, cellShrink * cellWorldSize);
 						_cube.AddComponent<NavMeshObstacle> ();
 						_cube.GetComponent<NavMeshObstacle> ().carving = true; 

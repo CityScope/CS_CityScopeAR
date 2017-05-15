@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: KendallBuildings
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: dbc59a510a2dd451e8be4f6428754706, type: 3}
   m_ShaderKeywords: _EMISSION _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -87,13 +87,13 @@ Material:
       second: 0.6
     - first:
         name: _Glossiness
-      second: 0.5
+      second: 0.452
     - first:
         name: _GlossyReflections
       second: 1
     - first:
         name: _Metallic
-      second: 0.11
+      second: 0.331
     - first:
         name: _Mode
       second: 0
@@ -106,6 +106,9 @@ Material:
     - first:
         name: _Parallax
       second: 0.07
+    - first:
+        name: _Shininess
+      second: 0.078125
     - first:
         name: _SmoothnessTextureChannel
       second: 1
