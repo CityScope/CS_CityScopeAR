@@ -11,8 +11,6 @@ public class stateManager : MonoBehaviour
 	public GameObject _night;
 	public GameObject _day;
 
-
-
 	void Start ()
 	{
 		_script = _cityIOgameObj.transform.GetComponent<cityIO> ();
@@ -58,6 +56,5 @@ public class stateManager : MonoBehaviour
 	{
 		t.transform.gameObject.SetActive (true); 
 	}
-
 }
 

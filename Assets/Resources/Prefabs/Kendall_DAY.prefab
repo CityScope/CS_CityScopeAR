@@ -6839,7 +6839,7 @@ GameObject:
   - component: {fileID: 33484049133102330}
   - component: {fileID: 23537561490109120}
   m_Layer: 0
-  m_Name: ground
+  m_Name: ground_EL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13482,7 +13482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4525120888456884}
   m_Layer: 0
-  m_Name: BuildingsHolder
+  m_Name: BuildingsHolder_EL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19196,12 +19196,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720383768737300}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4959441807859730}
   - {fileID: 4525120888456884}
+  - {fileID: 4959441807859730}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22608,7 +22608,7 @@ Transform:
   - {fileID: 4807329064701148}
   - {fileID: 4758166465700848}
   m_Father: {fileID: 4311913399354586}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4525515075792634
 Transform:
@@ -27673,12 +27673,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1434900583117992}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -413.9001, y: -3.1200562, z: -332.80157}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -413.9001, y: -3.1200562, z: -332.8015}
+  m_LocalScale: {x: 1.0000008, y: 1.000001, z: 1.0000008}
   m_Children: []
   m_Father: {fileID: 4311913399354586}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4960286665602570
 Transform:

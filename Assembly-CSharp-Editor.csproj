@@ -46,36 +46,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\TangoPrefabs\Editor\TangoArPoseControllerInspector.cs" />
-     <Compile Include="Assets\TangoPrefabs\Editor\TangoArScreenInspector.cs" />
-     <Compile Include="Assets\TangoPrefabs\Editor\TangoDeltaPoseControllerInspector.cs" />
-     <Compile Include="Assets\TangoPrefabs\Editor\TangoPointCloudInspector.cs" />
-     <Compile Include="Assets\TangoPrefabs\Editor\TangoPoseControllerInspector.cs" />
-     <Compile Include="Assets\TangoPrefabs\Editor\TangoPrefabInspectorHelper.cs" />
-     <Compile Include="Assets\TangoSDK\Editor\TangoInspector.cs" />
-     <Compile Include="Assets\TangoSDK\Editor\TangoMenu.cs" />
-     <Compile Include="Assets\TangoSDK\Examples\Common\Scripts\Editor\TangoDynamicMeshInspector.cs" />
-     <None Include="Assets\TangoSDK\Examples\ExperimentalMeshOcclusion\Shaders\ZTestBlur.shader" />
-     <None Include="Assets\TangoPrefabs\Shaders\TangoEnvironmentalLighting\EnvironmentalLightingStandard.shader" />
-     <None Include="Assets\TangoSDK\Examples\SimpleAugmentedReality\Textures\README.txt" />
-     <None Include="Assets\TangoPrefabs\Shaders\PointCloud.shader" />
-     <None Include="Assets\TangoSDK\Core\Shaders\RGB_ARScreen.shader" />
-     <None Include="Assets\TangoPrefabs\Shaders\YUV2RGB.shader" />
-     <None Include="Assets\TangoSDK\Core\Shaders\RGB2YUV_CbCr.shader" />
-     <None Include="Assets\TangoPrefabs\Shaders\ARPostProcess.shader" />
-     <None Include="Assets\TangoSDK\Examples\ExperimentalMeshBuilderWithPhysics\Shader\UnlitColor.shader" />
-     <None Include="Assets\TangoPrefabs\Shaders\TangoEnvironmentalLighting\EnvironmentalLightingSpecularBumped.shader" />
-     <None Include="Assets\TangoPrefabs\Shaders\TangoEnvironmentalLighting\TangoEnvironmentalLighting.cginc" />
-     <None Include="Assets\TangoSDK\Core\Shaders\DepthEmulation.shader" />
-     <None Include="Assets\TangoSDK\Core\Shaders\RGB2YUV_Y.shader" />
-     <None Include="Assets\TangoSDK\Examples\ExperimentalMeshOcclusion\Shaders\OcclusionMesh.shader" />
-     <None Include="Assets\TangoSDK\Examples\ExperimentalMeshBuilderWithColor\Shaders\UnlitVertexColor.shader" />
-     <None Include="Assets\TangoSDK\Examples\ExperimentalMeshOcclusion\Shaders\OcclusionMask.shader" />
-     <None Include="Assets\TangoSDK\Core\Shaders\ColorCameraEmulation.shader" />
-     <None Include="Assets\TangoPrefabs\Shaders\PointCloud_Occlusion.shader" />
-     <None Include="Assets\TangoSDK\Examples\ExperimentalMeshOcclusion\Shaders\TangoOcclusion.cginc" />
+     <Compile Include="Assets\TANGO\TangoPrefabs\Editor\TangoArPoseControllerInspector.cs" />
+     <Compile Include="Assets\TANGO\TangoPrefabs\Editor\TangoArScreenInspector.cs" />
+     <Compile Include="Assets\TANGO\TangoPrefabs\Editor\TangoDeltaPoseControllerInspector.cs" />
+     <Compile Include="Assets\TANGO\TangoPrefabs\Editor\TangoPointCloudInspector.cs" />
+     <Compile Include="Assets\TANGO\TangoPrefabs\Editor\TangoPoseControllerInspector.cs" />
+     <Compile Include="Assets\TANGO\TangoPrefabs\Editor\TangoPrefabInspectorHelper.cs" />
+     <Compile Include="Assets\TANGO\TangoSDK\Editor\TangoInspector.cs" />
+     <Compile Include="Assets\TANGO\TangoSDK\Editor\TangoMenu.cs" />
+     <Compile Include="Assets\TANGO\TangoSDK\Examples\Common\Scripts\Editor\TangoDynamicMeshInspector.cs" />
+     <None Include="Assets\TANGO\TangoSDK\Examples\ExperimentalMeshOcclusion\Shaders\ZTestBlur.shader" />
+     <None Include="Assets\TANGO\TangoPrefabs\Shaders\TangoEnvironmentalLighting\EnvironmentalLightingStandard.shader" />
+     <None Include="Assets\TANGO\TangoSDK\Examples\SimpleAugmentedReality\Textures\README.txt" />
+     <None Include="Assets\TANGO\TangoPrefabs\Shaders\PointCloud.shader" />
+     <None Include="Assets\TANGO\TangoSDK\Core\Shaders\RGB_ARScreen.shader" />
+     <None Include="Assets\TANGO\TangoPrefabs\Shaders\YUV2RGB.shader" />
+     <None Include="Assets\TANGO\TangoSDK\Core\Shaders\RGB2YUV_CbCr.shader" />
+     <None Include="Assets\TANGO\TangoPrefabs\Shaders\ARPostProcess.shader" />
+     <None Include="Assets\TANGO\TangoSDK\Examples\ExperimentalMeshBuilderWithPhysics\Shader\UnlitColor.shader" />
+     <None Include="Assets\TANGO\TangoPrefabs\Shaders\TangoEnvironmentalLighting\EnvironmentalLightingSpecularBumped.shader" />
+     <None Include="Assets\TANGO\TangoPrefabs\Shaders\TangoEnvironmentalLighting\TangoEnvironmentalLighting.cginc" />
+     <None Include="Assets\TANGO\TangoSDK\Core\Shaders\DepthEmulation.shader" />
+     <None Include="Assets\TANGO\TangoSDK\Core\Shaders\RGB2YUV_Y.shader" />
+     <None Include="Assets\TANGO\TangoSDK\Examples\ExperimentalMeshOcclusion\Shaders\OcclusionMesh.shader" />
+     <None Include="Assets\TANGO\TangoSDK\Examples\ExperimentalMeshBuilderWithColor\Shaders\UnlitVertexColor.shader" />
+     <None Include="Assets\TANGO\TangoSDK\Examples\ExperimentalMeshOcclusion\Shaders\OcclusionMask.shader" />
+     <None Include="Assets\TANGO\TangoSDK\Core\Shaders\ColorCameraEmulation.shader" />
+     <None Include="Assets\TANGO\TangoPrefabs\Shaders\PointCloud_Occlusion.shader" />
+     <None Include="Assets\TANGO\TangoSDK\Examples\ExperimentalMeshOcclusion\Shaders\TangoOcclusion.cginc" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
-     <None Include="Assets\TangoPrefabs\Shaders\TangoEnvironmentalLighting\EnvironmentalLightingDiffuse.shader" />
+     <None Include="Assets\TANGO\TangoPrefabs\Shaders\TangoEnvironmentalLighting\EnvironmentalLightingDiffuse.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
