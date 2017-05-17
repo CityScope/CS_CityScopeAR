@@ -11,26 +11,23 @@ public class UIController : MonoBehaviour
 	public Text _buttonText;
 	private bool _bool;
 
+	void Start()
+
+	{
+		_modelToHide.SetActive (false); 
+		_arLineToHide.SetActive (true); 
+	}
+
 	public void hideObjects ()
 	{
 		_bool = !_bool;
-		print ("click"); 
 		_modelToHide.SetActive (_bool); 
 		_arLineToHide.SetActive (!_bool); 
 
 		if (_bool) {
-			_buttonText.text = "Turn On Measure";
+			_buttonText.text = "Start Calibration";
 		} else {
-			_buttonText.text = "Measuring.."; 
+			_buttonText.text = "End Calibration"; 
 		}
 	}
-
-
-
 }
-
-
-
-
-
-

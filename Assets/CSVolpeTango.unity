@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 80773088}
   - component: {fileID: 80773090}
   m_Layer: 0
-  m_Name: Line Measure
+  m_Name: Calibration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.01
+    widthMultiplier: 0.001
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -237,11 +237,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cellSize: 22
-  _cellsInRaw: 15
+  _cellsInRaw: 14
   _cityIO: {fileID: 1877268378}
   m_pointCloud: {fileID: 929309466}
   m_lineRenderer: {fileID: 80773088}
+  _spheresMaterial: {fileID: 2100000, guid: 91216ae568b35425ead5420092fd8102, type: 2}
   _rotationOffset: -90
+  _3dText: {fileID: 102630974123327480, guid: d806e0341f67b4c6586a791ecd625d8a, type: 2}
 --- !u!1 &199639863
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +393,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 840, y: 534}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 174.2, y: 42.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &749592402
 MonoBehaviour:
@@ -621,7 +623,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: on/off
+  m_Text: Calibration
 --- !u!222 &905700763
 CanvasRenderer:
   m_ObjectHideFlags: 0

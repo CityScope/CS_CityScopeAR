@@ -46,7 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resources\scripts\ARAlign.cs" />
+     <Compile Include="Assets\Resources\scripts\Calibration.cs" />
      <Compile Include="Assets\Resources\scripts\CityIO\cityIO.cs" />
      <Compile Include="Assets\Resources\scripts\Helpers\Scale4Tango.cs" />
      <Compile Include="Assets\Resources\scripts\Helpers\cameraControl.cs" />

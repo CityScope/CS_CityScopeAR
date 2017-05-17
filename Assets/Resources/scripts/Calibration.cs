@@ -21,7 +21,6 @@
 // based on point to point scene in Tango SDK samples 
 
 
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -31,7 +30,7 @@ using UnityEngine;
 /// <summary>
 /// GUI controller to show distance data.
 /// </summary>
-public class ARAlign : MonoBehaviour, ITangoDepth
+public class Calibration : MonoBehaviour, ITangoDepth
 {
 	// Constant values for overlay.
 	public const float UI_LABEL_START_X = 15.0f;
@@ -97,7 +96,12 @@ public class ARAlign : MonoBehaviour, ITangoDepth
 
 	private GameObject _sphereStart;
 	private GameObject _sphereEnd;
+	private float _sphereScale = 0.02f;
+	public Material _spheresMaterial;
 	public int _rotationOffset;
+	public TextMesh _3dText;
+	private TextMesh _first3dText;
+	private TextMesh _second3dText;
 
 	/// <summary>
 	/// Start this instance.
@@ -114,8 +118,8 @@ public class ARAlign : MonoBehaviour, ITangoDepth
 		m_distanceText = "Distance is " + m_distance + " meters.";
 
 		_RenderLine (); //go and print the line and scale/rot the model 
-
-		if (Input.GetMouseButtonDown (0)) {
+	
+		if (Input.GetMouseButtonUp (0)) { // allow dragging 
 			StartCoroutine (_WaitForDepth (Input.mousePosition));
 		}
 
@@ -148,7 +152,7 @@ public class ARAlign : MonoBehaviour, ITangoDepth
 			TangoEnums.TangoDepthCameraRate.DISABLED);
 
 		Camera cam = Camera.main;
-		int pointIndex = m_pointCloud.FindClosestPoint (cam, touchPosition, 20);
+		int pointIndex = m_pointCloud.FindClosestPoint (cam, touchPosition, 10);
 
 		if (pointIndex > -1) {
 			// Index is valid
@@ -186,39 +190,36 @@ public class ARAlign : MonoBehaviour, ITangoDepth
 
 	private void DrawSpheres () // draw points 
 	{
+		//removes old GO's 
 		Destroy (_sphereStart); 
+		Destroy (_sphereEnd);  
+
+		//3d text 
+		_first3dText = Instantiate (_3dText);
+		_first3dText.transform.position = new Vector3 (m_startPoint.x, m_startPoint.y + 0.015f , m_startPoint.z); 
+		//_first3dText.transform.LookAt(Camera.main.transform);
+		_first3dText.transform.localScale = new Vector3 (_sphereScale, _sphereScale, _sphereScale); 
+		_first3dText.text = "First" + "\n"+ "Point"; 
+		Destroy(_first3dText, 4);
+		_first3dText.transform.parent = transform; 
+
+		Color _tmpColor = _spheresMaterial.color; 
+		_tmpColor.a = 0.25f; 
+		_spheresMaterial.color = _tmpColor; 
+		_tmpColor = new Color (1, 0, 0, 0.25f);
 
 		_sphereStart = GameObject.CreatePrimitive (PrimitiveType.Sphere);
 		_sphereStart.transform.parent = transform; 
 		_sphereStart.transform.position = m_startPoint;
-		_sphereStart.GetComponent<Renderer> ().material.color = Color.red;
-		_sphereStart.transform.localScale = new Vector3 (0.05f, 0.05f, 0.05f);  
+		_sphereStart.transform.localScale = new Vector3 (_sphereScale, _sphereScale, _sphereScale);
+		_sphereStart.GetComponent<Renderer> ().material = _spheresMaterial;
 
-		Destroy (_sphereEnd); 
 
 		_sphereEnd = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-		_sphereEnd.transform.position = m_endPoint;
 		_sphereEnd.transform.parent = transform; 
-		_sphereEnd.GetComponent<Renderer> ().material.color = Color.yellow;
-		_sphereEnd.transform.localScale = new Vector3 (0.05f, 0.05f, 0.05f);  
-
-
-	}
-
-
-	/// <summary>
-	/// Display simple GUI.
-	/// </summary>
-	public void OnGUI ()
-	{
-		if (m_tangoApplication.HasRequiredPermissions) {
-			GUI.color = Color.black;
-			GUI.Label (new Rect (UI_LABEL_START_X,
-				UI_LABEL_START_Y,
-				UI_LABEL_SIZE_X,
-				UI_LABEL_SIZE_Y),
-				"<size=25>" + m_distanceText + "</size>");
-		}
+		_sphereEnd.transform.position = m_endPoint;
+		_sphereEnd.transform.localScale = new Vector3 (_sphereScale, _sphereScale, _sphereScale); 
+		_sphereEnd.GetComponent<Renderer> ().material = _spheresMaterial;
 	}
 
 	/// <summary>
