@@ -2,9 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/scripts/Calibration.cs">
     <Files>
-      <File FileName="Assets/Resources/scripts/UIController.cs" Line="18" Column="32" />
-      <File FileName="Assets/Resources/scripts/Calibration.cs" Line="200" Column="5" />
-      <File FileName="Assets/Resources/scripts/CityIO/cityIO.cs" Line="146" Column="7" />
+      <File FileName="Assets/Resources/scripts/Calibration.cs" Line="196" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

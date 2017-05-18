@@ -10,7 +10,6 @@ public class cameraControl : MonoBehaviour
 	public float _endSize = 200;
 	public int _add = 0;
 	//temp for test
-	private bool _flag = true;
 	public float _rotSpeed = 5f;
 	public float _transitionDuration = 1;
 	private float t = 0.0f;

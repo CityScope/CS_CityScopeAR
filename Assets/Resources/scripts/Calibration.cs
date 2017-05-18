@@ -84,10 +84,6 @@ public class Calibration : MonoBehaviour, ITangoDepth
 	private Vector3 m_endPoint = new Vector3 (1f, 0, 0);
 	//avoid zreo scale at start !
 
-	/// <summary>
-	/// The distance between the two selected points.
-	/// </summary>
-	private float m_distance;
 
 	/// <summary>
 	/// The text to display the distance.
@@ -102,6 +98,7 @@ public class Calibration : MonoBehaviour, ITangoDepth
 	public TextMesh _3dText;
 	private TextMesh _first3dText;
 	private TextMesh _second3dText;
+	private Quaternion _lineRot;
 
 	/// <summary>
 	/// Start this instance.
@@ -114,15 +111,11 @@ public class Calibration : MonoBehaviour, ITangoDepth
 
 	public void Update ()
 	{
-		// Distance was found.
-		m_distanceText = "Distance is " + m_distance + " meters.";
-
 		_RenderLine (); //go and print the line and scale/rot the model 
-	
+
 		if (Input.GetMouseButtonUp (0)) { // allow dragging 
 			StartCoroutine (_WaitForDepth (Input.mousePosition));
 		}
-
 		if (Input.GetKey (KeyCode.Escape)) {
 			// This is a fix for a lifecycle issue where calling
 			// Application.Quit() here, and restarting the application
@@ -140,69 +133,56 @@ public class Calibration : MonoBehaviour, ITangoDepth
 	private IEnumerator _WaitForDepth (Vector2 touchPosition)
 	{
 		m_waitingForDepth = true;
-
 		// Turn on the camera and wait for a single depth update
 		m_tangoApplication.SetDepthCameraRate (
 			TangoEnums.TangoDepthCameraRate.MAXIMUM);
 		while (m_waitingForDepth) {
 			yield return null;
 		}
-
 		m_tangoApplication.SetDepthCameraRate (
 			TangoEnums.TangoDepthCameraRate.DISABLED);
-
 		Camera cam = Camera.main;
 		int pointIndex = m_pointCloud.FindClosestPoint (cam, touchPosition, 10);
-
 		if (pointIndex > -1) {
 			// Index is valid
 			m_startPoint = m_endPoint;
 			m_endPoint = m_pointCloud.m_points [pointIndex];
-
-			m_distance = Vector3.Distance (m_startPoint, m_endPoint); //for text display 
-
-			DrawSpheres ();//show points
 		}
 	}
 
 
-	/// <summary>
-	/// Render the line from the start point to the end point.
-	/// </summary>
 	private void _RenderLine ()
-	{
-		m_lineRenderer.SetPosition (0, m_startPoint);
-		m_lineRenderer.SetPosition (1, m_endPoint);
-
-		Vector3 _delta = m_endPoint - m_startPoint;
-		Quaternion _rot = Quaternion.LookRotation (_delta);
-		Vector3 _rotEular = _rot.eulerAngles;
-		_cityIO.transform.rotation = Quaternion.Euler (_rotEular.x, _rotEular.y + _rotationOffset, _rotEular.z); // move the rotation to align to easy two points 
-		print (_cityIO.transform.rotation + "  && " + _rot); 
-
-		// position and scale 
-		_cityIO.transform.position = m_startPoint; //set base point
-		float _dist = Vector3.Distance (m_startPoint, m_endPoint);
-		_dist = _dist / (_cellSize * _cellsInRaw); 
-		_cityIO.transform.localScale = new Vector3 (_dist, _dist, _dist); 
-	}
-
-
-	private void DrawSpheres () // draw points 
 	{
 		//removes old GO's 
 		Destroy (_sphereStart); 
 		Destroy (_sphereEnd);  
+		Destroy (_first3dText, 2);
+
+
+		m_lineRenderer.SetPosition (0, m_startPoint);
+		m_lineRenderer.SetPosition (1, m_endPoint);
+		Vector3 _delta = m_endPoint - m_startPoint;
+		_lineRot = Quaternion.LookRotation (_delta);
+		Vector3 _rotEular = _lineRot.eulerAngles;
+		float _dist = Vector3.Distance (m_startPoint, m_endPoint);
+		_dist = _dist / (_cellSize * _cellsInRaw); 
+
+		// cityIO position and scale 
+		_cityIO.transform.position = m_startPoint; //set base point
+		_cityIO.transform.rotation = Quaternion.Euler (_rotEular.x, _rotEular.y + _rotationOffset, _rotEular.z); // move the rotation to align to easy two points 
+		_cityIO.transform.localScale = new Vector3 (_dist, _dist, _dist); 
+
 
 		//3d text 
 		_first3dText = Instantiate (_3dText);
-		_first3dText.transform.position = new Vector3 (m_startPoint.x, m_startPoint.y + 0.015f , m_startPoint.z); 
+		_first3dText.transform.position = new Vector3 (m_startPoint.x, m_startPoint.y + 0.015f, m_startPoint.z); 
 		//_first3dText.transform.LookAt(Camera.main.transform);
 		_first3dText.transform.localScale = new Vector3 (_sphereScale, _sphereScale, _sphereScale); 
-		_first3dText.text = "First" + "\n"+ "Point"; 
-		Destroy(_first3dText, 4);
+		_first3dText.transform.rotation = _cityIO.transform.rotation; 
+		_first3dText.text = "First" + "\n" + "Point"; 
 		_first3dText.transform.parent = transform; 
 
+		//End, start Spheres 
 		Color _tmpColor = _spheresMaterial.color; 
 		_tmpColor.a = 0.25f; 
 		_spheresMaterial.color = _tmpColor; 
@@ -214,46 +194,43 @@ public class Calibration : MonoBehaviour, ITangoDepth
 		_sphereStart.transform.localScale = new Vector3 (_sphereScale, _sphereScale, _sphereScale);
 		_sphereStart.GetComponent<Renderer> ().material = _spheresMaterial;
 
-
 		_sphereEnd = GameObject.CreatePrimitive (PrimitiveType.Sphere);
 		_sphereEnd.transform.parent = transform; 
 		_sphereEnd.transform.position = m_endPoint;
 		_sphereEnd.transform.localScale = new Vector3 (_sphereScale, _sphereScale, _sphereScale); 
 		_sphereEnd.GetComponent<Renderer> ().material = _spheresMaterial;
+
+
+//		for (int i = 0; i < _cellsInRaw; i++) {
+//			GameObject _gridPoint = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+//			_gridPoint.transform.position = Vector3.Lerp 
+//				(m_endPoint, m_startPoint, 
+//				(i * (_delta.magnitude / _cellsInRaw)));
+//
+//			print (_delta.magnitude + "  " + i + "  " + (i * (_delta.magnitude / _cellsInRaw)));  
+//
+//			_gridPoint.transform.localScale = new Vector3 (_sphereScale, _sphereScale, _sphereScale); 
+//			print (_delta.magnitude);  
+//		}
 	}
 
-	/// <summary>
-	/// This is called each time new depth data is available.
-	///
-	/// On the Tango tablet, the depth callback occurs at 5 Hz.
-	/// </summary>
-	/// <param name="tangoDepth">Tango depth.</param>
+
+
 	public void OnTangoDepthAvailable (TangoUnityDepth tangoDepth)
 	{
-		// Don't handle depth here because the PointCloud may not have been
-		// updated yet. Just tell the coroutine it can continue.
 		m_waitingForDepth = false;
 	}
 
-	/// <summary>
-	/// This is called when successfully connected to Tango service.
-	/// </summary>
 	public void OnTangoServiceConnected ()
 	{
 		m_tangoApplication.SetDepthCameraRate (
 			TangoEnums.TangoDepthCameraRate.DISABLED);
 	}
 
-	/// <summary>
-	/// This is called when disconnected from the Tango service.
-	/// </summary>
 	public void OnTangoServiceDisconnected ()
 	{
 	}
 
-	/// <summary>
-	/// Unity destroy function.
-	/// </summary>
 	public void OnDestroy ()
 	{
 		m_tangoApplication.Unregister (this);

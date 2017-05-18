@@ -1,9 +1,9 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{E3AE96A7-4205-D776-1976-D51EC9B951E6}") = "CS VolpeTango", "Assembly-CSharp.csproj", "{65B3FF54-9286-38C9-28A0-3B92F03D10A6}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS VolpeTango", "Assembly-CSharp.csproj", "{65B3FF54-9286-38C9-28A0-3B92F03D10A6}"
 EndProject
-Project("{E3AE96A7-4205-D776-1976-D51EC9B951E6}") = "CS VolpeTango", "Assembly-CSharp-Editor.csproj", "{C6D46EB3-D10A-D59E-22F8-565BD7D5F78A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS VolpeTango", "Assembly-CSharp-Editor.csproj", "{C6D46EB3-D10A-D59E-22F8-565BD7D5F78A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
