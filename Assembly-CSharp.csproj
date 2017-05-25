@@ -51,6 +51,8 @@
      <Compile Include="Assets\Resources\scripts\Helpers\Scale4Tango.cs" />
      <Compile Include="Assets\Resources\scripts\Helpers\cameraControl.cs" />
      <Compile Include="Assets\Resources\scripts\Helpers\stateManager.cs" />
+     <Compile Include="Assets\Resources\scripts\ScaleToTable.cs" />
+     <Compile Include="Assets\Resources\scripts\SpinLogo.cs" />
      <Compile Include="Assets\Resources\scripts\UIController.cs" />
      <Compile Include="Assets\TANGO\Google-Unity\Scripts\AndroidHelper.cs" />
      <Compile Include="Assets\TANGO\Google-Unity\Scripts\AndroidLifecycle.cs" />

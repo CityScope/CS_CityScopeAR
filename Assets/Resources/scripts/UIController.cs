@@ -6,28 +6,53 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-	public GameObject _modelToHide;
-	public GameObject _arLineToHide;
-	public Text _buttonText;
+	public GameObject _modelDisplay;
+	public GameObject _volpeModel;
+	public GameObject _AndorraModel;
+
+	public GameObject _arLineDisplay;
+	public GameObject _scaleButtonDisplay;
+	public Text _calibrationButtonTxt;
+	public Text _contextButtonTxt;
+
 	private bool _bool;
 
-	void Start()
-
+	void Start ()
 	{
-		_modelToHide.SetActive (false); 
-		_arLineToHide.SetActive (true); 
+		_modelDisplay.SetActive (true); 
+		_arLineDisplay.SetActive (false); 
+		_scaleButtonDisplay.SetActive (true); 
+		_volpeModel.SetActive (false); 
+		_AndorraModel.SetActive (false); 
 	}
 
-	public void hideObjects ()
+	// On Off Calibration
+	public void CalibrationButton ()
 	{
-		_bool = !_bool;
-		_modelToHide.SetActive (_bool); 
-		_arLineToHide.SetActive (!_bool); 
+		_modelDisplay.SetActive (_bool); 
+		_arLineDisplay.SetActive (!_bool); 
+		_scaleButtonDisplay.SetActive (_bool); 
 
 		if (_bool) {
-			_buttonText.text = "Start Calibration";
+			_calibrationButtonTxt.text = "Start Calibration";
 		} else {
-			_buttonText.text = "End Calibration"; 
+			_calibrationButtonTxt.text = "End Calibration"; 
 		}
+		_bool = !_bool;
 	}
+
+	// Context models
+	public void ContextModels ()
+	{
+		_volpeModel.SetActive (_bool); 
+		_AndorraModel.SetActive (!_bool); 
+
+		if (_bool) {
+			_contextButtonTxt.text = "Andorra";
+		} else {
+			_contextButtonTxt.text = "Kendall Sq."; 
+		}
+		_bool = !_bool;
+	}
+
 }

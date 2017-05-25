@@ -111,7 +111,7 @@ public class Calibration : MonoBehaviour, ITangoDepth
 
 	public void Update ()
 	{
-		_RenderLine (); //go and print the line and scale/rot the model 
+		_DrawLineAndScale (); //go and print the line and scale/rot the model 
 
 		if (Input.GetMouseButtonUp (0)) { // allow dragging 
 			StartCoroutine (_WaitForDepth (Input.mousePosition));
@@ -151,13 +151,11 @@ public class Calibration : MonoBehaviour, ITangoDepth
 	}
 
 
-	private void _RenderLine ()
+	private void _DrawLineAndScale ()
 	{
 		//removes old GO's 
 		Destroy (_sphereStart); 
 		Destroy (_sphereEnd);  
-		Destroy (_first3dText, 2);
-
 
 		m_lineRenderer.SetPosition (0, m_startPoint);
 		m_lineRenderer.SetPosition (1, m_endPoint);
@@ -174,26 +172,30 @@ public class Calibration : MonoBehaviour, ITangoDepth
 
 
 		//3d text 
-		_first3dText = Instantiate (_3dText);
-		_first3dText.transform.position = new Vector3 (m_startPoint.x, m_startPoint.y + 0.015f, m_startPoint.z); 
-		//_first3dText.transform.LookAt(Camera.main.transform);
-		_first3dText.transform.localScale = new Vector3 (_sphereScale, _sphereScale, _sphereScale); 
-		_first3dText.transform.rotation = _cityIO.transform.rotation; 
-		_first3dText.text = "First" + "\n" + "Point"; 
-		_first3dText.transform.parent = transform; 
+//		Destroy (_first3dText, 2);
+//		_first3dText = Instantiate (_3dText);
+//		_first3dText.transform.position = new Vector3 (m_startPoint.x, m_startPoint.y + 0.015f, m_startPoint.z); 
+//		//_first3dText.transform.LookAt(Camera.main.transform);
+//		_first3dText.transform.localScale = new Vector3 (_sphereScale, _sphereScale, _sphereScale); 
+//		_first3dText.transform.rotation = _cityIO.transform.rotation; 
+//		_first3dText.text = "First" + "\n" + "Point"; 
+//		_first3dText.transform.parent = transform; 
 
 		//End, start Spheres 
 		Color _tmpColor = _spheresMaterial.color; 
 		_tmpColor.a = 0.25f; 
-		_spheresMaterial.color = _tmpColor; 
 		_tmpColor = new Color (1, 0, 0, 0.25f);
+		_spheresMaterial.color = _tmpColor; 
 
+		//Sphere Start
 		_sphereStart = GameObject.CreatePrimitive (PrimitiveType.Sphere);
 		_sphereStart.transform.parent = transform; 
 		_sphereStart.transform.position = m_startPoint;
 		_sphereStart.transform.localScale = new Vector3 (_sphereScale, _sphereScale, _sphereScale);
 		_sphereStart.GetComponent<Renderer> ().material = _spheresMaterial;
 
+
+		//Sphere End
 		_sphereEnd = GameObject.CreatePrimitive (PrimitiveType.Sphere);
 		_sphereEnd.transform.parent = transform; 
 		_sphereEnd.transform.position = m_endPoint;
@@ -214,7 +216,11 @@ public class Calibration : MonoBehaviour, ITangoDepth
 //		}
 	}
 
-
+	public void ScaleToLegoSize ()
+	{
+		// cityIO position and scale 
+		_cityIO.transform.localScale = new Vector3 (0.0015f, 0.0015f, 0.0015f); 
+	}
 
 	public void OnTangoDepthAvailable (TangoUnityDepth tangoDepth)
 	{
