@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e8e5f68f0e5c9480d87ce6ca10626fbb
+timeCreated: 1495717671
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: UB-HelveticaBlack
+  fontNames:
+  - UB-HelveticaBlack
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e13d205ff3c324053801679dedfb3fc7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

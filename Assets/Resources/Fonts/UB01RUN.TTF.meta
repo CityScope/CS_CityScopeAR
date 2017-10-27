@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 90a8149f367814a07be0221d2ad0b779
+timeCreated: 1495717671
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: UB-Helvetica
+  fontNames:
+  - UB-Helvetica
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 13583d726298b445696c6a9d5e51bfa7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

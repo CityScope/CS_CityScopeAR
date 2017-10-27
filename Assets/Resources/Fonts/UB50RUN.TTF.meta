@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e61d06b4d48054d38a11e6a1b1a70814
+timeCreated: 1495717671
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: UB-HelveticaExtraLight
+  fontNames:
+  - UB-HelveticaExtraLight
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
