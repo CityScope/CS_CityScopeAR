@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 
@@ -10,8 +8,6 @@ public class UIController : MonoBehaviour
 	public GameObject _volpeModel;
 	public GameObject _AndorraModel;
 
-	public GameObject _arLineDisplay;
-	public GameObject _scaleButtonDisplay;
 	public Text _calibrationButtonTxt;
 	public Text _contextButtonTxt;
 
@@ -20,8 +16,6 @@ public class UIController : MonoBehaviour
 	void Start ()
 	{
 		_modelDisplay.SetActive (true); 
-		_arLineDisplay.SetActive (false); 
-		_scaleButtonDisplay.SetActive (true); 
 		_volpeModel.SetActive (false); 
 		_AndorraModel.SetActive (false); 
 	}
@@ -30,8 +24,6 @@ public class UIController : MonoBehaviour
 	public void CalibrationButton ()
 	{
 		_modelDisplay.SetActive (_bool); 
-		_arLineDisplay.SetActive (!_bool); 
-		_scaleButtonDisplay.SetActive (_bool); 
 
 		if (_bool) {
 			_calibrationButtonTxt.text = "Start Calibration";
