@@ -60,7 +60,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EmissionScaleUI: 0
-    - _FadePower: 1.65
+    - _FadePower: 0.34
     - _Glossiness: 0.5
     - _Metallic: 0
     - _Mode: 0
@@ -72,11 +72,11 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 0.13527882, g: 1, b: 0.049779046, a: 1}
     - _MainColor1: {r: 1, g: 0.5, b: 0.5, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor2: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.71323526, g: 0.71323526, b: 0.71323526, a: 1}
+    - _RimColor: {r: 0.35624707, g: 1, b: 0.03240022, a: 0}

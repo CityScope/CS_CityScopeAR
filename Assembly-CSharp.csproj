@@ -121,7 +121,6 @@
      <Compile Include="Assets\Resources\scripts\GoogleARCore\SDK\Scripts\Utility\ConversionHelper.cs" />
      <Compile Include="Assets\Resources\scripts\GoogleARCore\SDK\Scripts\Utility\IntPtrEqualityComparer.cs" />
      <Compile Include="Assets\Resources\scripts\GoogleARCore\SDK\Scripts\Utility\MarshalingHelper.cs" />
-     <Compile Include="Assets\Resources\scripts\Helpers\cameraControl.cs" />
      <Compile Include="Assets\Resources\scripts\Helpers\ScaleToTable.cs" />
      <Compile Include="Assets\Resources\scripts\Helpers\SpinLogo.cs" />
      <Compile Include="Assets\Resources\scripts\Helpers\UIController.cs" />

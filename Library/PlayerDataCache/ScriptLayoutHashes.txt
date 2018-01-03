@@ -133,7 +133,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 0352182229dc15ceae98dd2533712b4a Assembly-CSharp.dll:GoogleARCore.ARCoreBackgroundRenderer
 e1f1285d86f3a1745afc7444b310fb42 Assembly-CSharp.dll:Lean.Touch.LeanPitchYaw
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Lean.Touch.LeanOpenUrl
-afc9db5e4dde9c113307056739250c7c Assembly-CSharp.dll:.cityIO
+9d6806dcdebe95cc9f56b0ae6a17bfe4 Assembly-CSharp.dll:.cityIO
 5783b5cb6e6d5bcc7df8ef9e6d5aada9 Assembly-CSharp.dll:Lean.Touch.LeanRotate
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Lean.Touch.LeanSelectableTranslateInertia2D
 7ec810183283b62dc22c3816aac72ddc Assembly-CSharp.dll:Lean.Touch.LeanMultiTap
@@ -178,7 +178,6 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 2c1c9ca24124d1c2f2663139ec0115f8 Assembly-CSharp.dll:Lean.Touch.LeanCameraZoomSmooth
-9e8b96347a3f4c9743b08fcf52fb2f15 Assembly-CSharp.dll:.cameraControl
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 38cd8bab352980a9895e8804a5c01c82 Assembly-CSharp.dll:Lean.Touch.LeanSwipeRigidbody3DNoRelease
 c23567de7068d554c905c20656a91b08 Assembly-CSharp.dll:Lean.Touch.LeanCameraMoveSmooth
