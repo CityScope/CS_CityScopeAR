@@ -165,6 +165,7 @@ public class cityIO : MonoBehaviour
             control.transform.parent = gridParent.transform; //put into parent object for later control 
 
         }
+        
     }
 
 
