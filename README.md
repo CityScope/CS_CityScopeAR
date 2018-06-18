@@ -17,5 +17,4 @@ CityScopeAR is intended to reduce complexity in design and planning tools and to
 - Install the WebARonARCore APK: https://github.com/google-ar/WebARonARCore
 - visit https://cityscope.github.io/CS_CityScopeAR/ from the device using the WebARonARCore Chromium browser 
 ____
-
-Maintained by [Ariel Noyman](arielnoyman.com)
+[Contributors](https://github.com/CityScope/CS_CityScopeAR/graphs/contributors)
